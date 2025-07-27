@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Color Utilities</title>
+    <title>Sistem Registrasi UNY</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
 
@@ -28,13 +28,13 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-               <!-- Sidebar -->
+        <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
             
-                <img src="../img/Logo-UNY.svg" style="width: 150px;">
+                <img src="../img/Logo-UNY.svg" class="img-fluid" style="max-width: 150px;">
                 
             </a>
 
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="dashboard.html">
                     <i class="bi bi-grid-1x2-fill"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -62,11 +62,18 @@
                     <i class="bi bi-person-lines-fill"></i>
                     <span>Update Biodata</span>
                 </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="collapse-item" href="buttons.html">Buttons</a>
+                        <a class="collapse-item" href="cards.html">Cards</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="utilities-color.html">
+                <a class="nav-link" href="update-NIK.html">
                     <i class="bi bi-person-vcard-fill"></i>
                     <span>Update NIK</span>
                 </a>
@@ -82,7 +89,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="https://password.uny.ac.id/">
                     <i class="bi bi-lock-fill"></i>
                     <span>Update Password SSO</span>
                 </a>
@@ -90,7 +97,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfPqMsgFhkPA5K74RplJI-qiyIyO0UrQkzllv3l5mEoqyyqFQ/viewform?pli=1">
                     <i class="bi bi-mortarboard-fill"></i>
                     <span>Update Nama Mahasiswa</span></a>
             </li>
@@ -101,6 +108,8 @@
 
         </ul>
         <!-- End of Sidebar -->
+
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -114,9 +123,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
- 
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -196,8 +202,6 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Messages -->
-                       
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -239,87 +243,105 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+  <!-- Header -->
+  <div class="mb-4">
+    <h1 class="h4 text-gray-900 font-weight-bold">Selamat datang di Sistem Registrasi UNY</h1>
+    <p class="text-muted">Gunakan sistem ini untuk registrasi sebagai mahasiswa</p>
+  </div>
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-1 text-gray-800">Color Utilities</h1>
-                    <p class="mb-4">Bootstrap's default utility classes can be found on the official <a
-                            href="https://getbootstrap.com/docs">Bootstrap Documentation</a> page. The custom utilities
-                        below were created to extend this theme past the default utility classes built into Bootstrap's
-                        framework.</p>
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="data-mahasiswa-tab" data-toggle="tab" href="#data-mahasiswa" role="tab">Data Mahasiswa</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Data Profil</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Data Riwayat Pendidikan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Data Kependudukan</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Data Orang Tua/Wali</a>
+    </li>
+  </ul>
 
-                    <!-- Content Row -->
-                    <div class="row mb-4">
-
-                        
-    <!-- Data Akademik -->
-    <div class="col-md-6">
-      <div class="card shadow-sm p-3 h-100">
-        <h6 class="font-weight-bold text-primary"><i class="fas fa-graduation-cap mr-2"></i>Data Akademik</h6>
-        <table class="table table-borderless mt-3">
-          <tr><th class="text-muted">Nama</th><td>Andhika Pratama</td></tr>
-          <tr><th class="text-muted">Program Studi</th><td>Teknologi Informasi</td></tr>
-          <tr><th class="text-muted">Fakultas</th><td>Fakultas Teknik</td></tr>
-          <tr><th class="text-muted">Angkatan</th><td>2021</td></tr>
-          <tr><th class="text-muted">Semester Masuk</th><td>Gasal</td></tr>
-        </table>
+  <!-- Card: Data Mahasiswa -->
+  <div class="card mb-4 shadow-sm p-4" id="data-mahasiswa-tab">
+    <h5 class="font-weight-bold text-gray-800 mb-3"><i class="fas fa-user mr-2"></i>Data Mahasiswa</h5>
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <img src="img/undraw_profile.svg" class="rounded-circle mb-2" width="120" height="120">
+        <h6 class="font-weight-bold mb-0">Andhika Pratama</h6>
+        <small class="text-muted">Teknologi Informasi - S1</small>
       </div>
-    </div>
-
-    <!-- Email Mahasiswa -->
-    <div class="col-md-6">
-      <div class="card shadow-sm p-3 h-100">
-        <h6 class="font-weight-bold text-primary"><i class="fas fa-envelope mr-2"></i>Email Mahasiswa (UNITY)</h6>
-        <table class="table table-borderless mt-3">
-          <tr><th class="text-muted">Email UNY</th><td>andhika.2021@student.uny.ac.id</td></tr>
-          <tr><th class="text-muted">Status Akun</th><td><span class="badge badge-success">Aktif</span></td></tr>
-        </table>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <p><strong>NIM:</strong> 1234567890</p>
+            <p><strong>Kelompok:</strong> NON BIDIKMISI</p>
+            <p><strong>Angkatan:</strong> 2021</p>
+            <p><strong>Semester Masuk:</strong> Gasal</p>
+          </div>
+          <div class="col-md-6">
+            <p><strong>Fakultas:</strong> Fakultas Teknik</p>
+            <p><strong>Kampus:</strong> -</p>
+            <p><strong>Jalur Mahasiswa:</strong> Reguler Swadana/Non Reg</p>
+            <p><strong>Jalur Masuk:</strong> SM Utul</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
-  <div class="col-md-12"> <!-- Ini yang membungkus card dalam grid -->
-    <div class="card shadow-sm p-4">
-      <h6 class="font-weight-bold text-primary mb-4">
-        <i class="fas fa-id-card mr-2"></i>Verifikasi NIK dan KTP
-      </h6>
+  <!-- Email Mahasiswa -->
+  <div class="card mb-4 shadow-sm p-4">
+    <h6 class="font-weight-bold mb-3"><i class="fas fa-envelope mr-2"></i>Email Mahasiswa (UNITY)</h6>
+    <div class="form-group">
+      <input type="text" class="form-control" value="andhika.2021@student.uny.ac.id" readonly>
+    </div>
+    <div class="alert alert-primary small">
+      Akun Email UNY ini berfungsi sebagai akun SSO UNY (UNITY). Akun ini digunakan untuk login ke sistem berikut
+    </div>
 
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label>Nomor Induk Kependudukan (NIK) <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" placeholder="Masukkan 16-digit nomor NIK dari KTP anda">
-        </div>
-        <div class="form-group col-md-6">
-          <label>Status Verifikasi</label>
-          <input type="text" class="form-control bg-light border-primary text-primary" value="Menunggu" readonly>
-        </div>
+    <div class="row text-center">
+      <div class="col-md-3 mb-2">
+        <a href="#" class="btn btn-outline-primary btn-block">
+          <i class="fas fa-university"></i> <br> SIAKAD UNY
+        </a>
       </div>
-
-      <div class="form-group">
-        <label>Unggah Kartu Tanda Penduduk (KTP) <span class="text-danger">*</span></label>
-        <div class="border rounded p-4 text-center text-muted" style="border-style: dashed;">
-          <p class="mb-1">Unggah file KTP anda</p>
-          <small>JPG, PNG, atau PDF ukuran maksimal 5 MB</small><br>
-          <input type="file" class="mt-2">
-        </div>
+      <div class="col-md-3 mb-2">
+        <a href="#" class="btn btn-outline-primary btn-block">
+          <i class="fas fa-envelope"></i> <br> Webmail UNY
+        </a>
       </div>
-
-      <div class="text-right">
-        <button class="btn btn-success">Simpan</button>
+      <div class="col-md-3 mb-2">
+        <a href="#" class="btn btn-outline-primary btn-block">
+          <i class="fas fa-chalkboard-teacher"></i> <br> Besmart UNY
+        </a>
+      </div>
+      <div class="col-md-3 mb-2">
+        <a href="#" class="btn btn-outline-primary btn-block">
+          <i class="fas fa-award"></i> <br> Presma UNY
+        </a>
       </div>
     </div>
   </div>
 </div>
-                    </div>
 
-                </div>
-                <!-- /.container-fluid -->
 
-            </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
-           
+            <!-- <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer> -->
             <!-- End of Footer -->
 
         </div>
@@ -362,6 +384,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
