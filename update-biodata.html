@@ -588,15 +588,36 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    updateStepIndicator(1); // misalnya 1 untuk 'Riwayat Pendidikan'
+ function updateStepIndicator(stepIndex) {
+  const icons = document.querySelectorAll('.step-icon');
+  const lines = document.querySelectorAll('.step-line');
+
+  icons.forEach((icon, index) => {
+    if (index < stepIndex) {
+      icon.classList.add('text-success');
+      icon.classList.remove('text-primary', 'text-muted');
+    } else if (index === stepIndex) {
+      icon.classList.add('text-primary');
+      icon.classList.remove('text-success', 'text-muted');
+    } else {
+      icon.classList.add('text-muted');
+      icon.classList.remove('text-success', 'text-primary');
+    }
   });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    updateStepIndicator(2); // Step ke-3
+
+  lines.forEach((line, index) => {
+    if (index < stepIndex) {
+      line.classList.add('bg-primary');
+      line.classList.remove('bg-muted');
+    } else {
+      line.classList.remove('bg-primary');
+      line.classList.add('bg-muted');
+    }
   });
+}
+
 </script>
+
 
     <script>
   function updateStepIndicator(stepIndex) {
@@ -633,33 +654,40 @@
   function goToStep2() {
     document.getElementById('form-step-1').style.display = 'none';
     document.getElementById('form-step-2').style.display = 'block';
+    updateStepIndicator(1); // Step 2
   }
 
   function backToStep1() {
     document.getElementById('form-step-2').style.display = 'none';
     document.getElementById('form-step-1').style.display = 'block';
+    updateStepIndicator(0); // Step 1
   }
 
   function goToStep3() {
     document.getElementById('form-step-2').style.display = 'none';
     document.getElementById('form-step-3').style.display = 'block';
+    updateStepIndicator(2); // Step 3
   }
 
   function backToStep2() {
     document.getElementById('form-step-3').style.display = 'none';
     document.getElementById('form-step-2').style.display = 'block';
+    updateStepIndicator(1); // Step 2
   }
 
-    function goToStep4() {
+  function goToStep4() {
     document.getElementById('form-step-3').style.display = 'none';
     document.getElementById('form-step-4').style.display = 'block';
+    updateStepIndicator(3); // Step 4
   }
 
-  function backToStep5() {
-    document.getElementById('form-step-3').style.display = 'none';
-    document.getElementById('form-step-2').style.display = 'block';
+  function backToStep3() {
+    document.getElementById('form-step-4').style.display = 'none';
+    document.getElementById('form-step-3').style.display = 'block';
+    updateStepIndicator(2); // Step 3
   }
 </script>
+
 
 
 
