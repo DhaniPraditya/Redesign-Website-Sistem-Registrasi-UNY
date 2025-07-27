@@ -250,105 +250,454 @@
   </div>
 
   <!-- Tabs -->
-  <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="data-mahasiswa-tab" data-toggle="tab" href="#data-mahasiswa" role="tab">Data Mahasiswa</a>
+        <a class="nav-link active" id="data-mahasiswa-tab" data-toggle="tab" href="#data-mahasiswa" role="tab">Data Mahasiswa</a>
+    </li>
+     <li class="nav-item">
+        <a class="nav-link" id="data-diri-tab" data-toggle="tab" href="#data-diri" role="tab">Data Profil</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Data Profil</a>
+        <a class="nav-link" id="riwayat-tab" data-toggle="tab" href="#riwayat-pendidikan" role="tab">Data Riwayat Pendidikan</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Data Riwayat Pendidikan</a>
+        <a class="nav-link" id="kependudukan-tab" data-toggle="tab" href="#data-kependudukan" role="tab">Data Kependudukan</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Data Kependudukan</a>
+        <a class="nav-link" id="ortu-tab" data-toggle="tab" href="#data-ortu" role="tab">Data Orang Tua/Wali</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Data Orang Tua/Wali</a>
-    </li>
-  </ul>
+    </ul>
 
-  <!-- Card: Data Mahasiswa -->
-  <div class="card mb-4 shadow-sm p-4" id="data-mahasiswa-tab">
-    <h5 class="font-weight-bold text-gray-800 mb-3"><i class="fas fa-user mr-2"></i>Data Mahasiswa</h5>
-    <div class="row">
-      <div class="col-md-3 text-center">
-        <img src="img/undraw_profile.svg" class="rounded-circle mb-2" width="120" height="120">
-        <h6 class="font-weight-bold mb-0">Andhika Pratama</h6>
-        <small class="text-muted">Teknologi Informasi - S1</small>
-      </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-6">
-            <p><strong>NIM:</strong> 1234567890</p>
-            <p><strong>Kelompok:</strong> NON BIDIKMISI</p>
-            <p><strong>Angkatan:</strong> 2021</p>
-            <p><strong>Semester Masuk:</strong> Gasal</p>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+
+      <!-- Tab 1: Data Mahasiswa -->
+      <div class="tab-pane fade show active" id="data-mahasiswa" role="tabpanel">
+        <div class="card mb-4 shadow-sm p-4">
+          <h5 class="font-weight-bold text-gray-800 mb-3"><i class="fas fa-user mr-2"></i>Data Mahasiswa</h5>
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <img src="img/undraw_profile.svg" class="rounded-circle mb-2" width="120" height="120">
+              <h6 class="font-weight-bold mb-0">Andhika Pratama</h6>
+              <small class="text-muted">Teknologi Informasi - S1</small>
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>NIM:</strong> 1234567890</p>
+                  <p><strong>Kelompok:</strong> NON BIDIKMISI</p>
+                  <p><strong>Angkatan:</strong> 2021</p>
+                  <p><strong>Semester Masuk:</strong> Gasal</p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Fakultas:</strong> Fakultas Teknik</p>
+                  <p><strong>Kampus:</strong> -</p>
+                  <p><strong>Jalur Mahasiswa:</strong> Reguler Swadana/Non Reg</p>
+                  <p><strong>Jalur Masuk:</strong> SM Utul</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-6">
-            <p><strong>Fakultas:</strong> Fakultas Teknik</p>
-            <p><strong>Kampus:</strong> -</p>
-            <p><strong>Jalur Mahasiswa:</strong> Reguler Swadana/Non Reg</p>
-            <p><strong>Jalur Masuk:</strong> SM Utul</p>
+        </div>
+
+        <!-- Email Mahasiswa -->
+        <div class="card mb-4 shadow-sm p-4">
+          <h6 class="font-weight-bold mb-3"><i class="fas fa-envelope mr-2"></i>Email Mahasiswa (UNITY)</h6>
+          <input type="text" class="form-control mb-3" value="andhika.2021@student.uny.ac.id" readonly>
+          <div class="alert alert-primary small">
+            Akun Email UNY ini berfungsi sebagai akun SSO UNY (UNITY). Akun ini digunakan untuk login ke sistem berikut
+          </div>
+          <div class="row text-center">
+            <div class="col-md-3 mb-2">
+              <a href="#" class="btn btn-outline-primary btn-block">
+                <i class="fas fa-university"></i><br> SIAKAD UNY
+              </a>
+            </div>
+            <div class="col-md-3 mb-2">
+              <a href="#" class="btn btn-outline-primary btn-block">
+                <i class="fas fa-envelope"></i><br> Webmail UNY
+              </a>
+            </div>
+            <div class="col-md-3 mb-2">
+              <a href="#" class="btn btn-outline-primary btn-block">
+                <i class="fas fa-chalkboard-teacher"></i><br> Besmart UNY
+              </a>
+            </div>
+            <div class="col-md-3 mb-2">
+              <a href="#" class="btn btn-outline-primary btn-block">
+                <i class="fas fa-award"></i><br> Presma UNY
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Email Mahasiswa -->
-  <div class="card mb-4 shadow-sm p-4">
-    <h6 class="font-weight-bold mb-3"><i class="fas fa-envelope mr-2"></i>Email Mahasiswa (UNITY)</h6>
-    <div class="form-group">
-      <input type="text" class="form-control" value="andhika.2021@student.uny.ac.id" readonly>
+      <!-- Tab: Data Diri -->
+      <div class="tab-pane fade" id="data-diri" role="tabpanel">
+    <div class="card mb-4 shadow-sm p-4" style="border-radius: 10px;">
+        <h5 class="font-weight-bold text-primary mb-4">
+        <i class="fas fa-user mr-2"></i>Data Diri
+        </h5>
+        <div class="container-fluid">
+        <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+            <small class="text-muted">Tempat Lahir</small><br>
+            <span class="font-weight-bold">Sleman</span>
+            </div>
+            <div class="col-md-6">
+            <small class="text-muted">Jenis Kelamin</small><br>
+            <span class="font-weight-bold">Laki-laki</span>
+            </div>
+        </div>
+        <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+            <small class="text-muted">Tanggal Lahir</small><br>
+            <span class="font-weight-bold">23-03-2003</span>
+            </div>
+            <div class="col-md-6">
+            <small class="text-muted">Tinggi Badan</small><br>
+            <span class="font-weight-bold">165 CM</span>
+            </div>
+        </div>
+        <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+            <small class="text-muted">Angkatan</small><br>
+            <span class="font-weight-bold">2021</span>
+            </div>
+            <div class="col-md-6">
+            <small class="text-muted">Berat Badan</small><br>
+            <span class="font-weight-bold">65 KG</span>
+            </div>
+        </div>
+        <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+            <small class="text-muted">Agama</small><br>
+            <span class="font-weight-bold">Islam</span>
+            </div>
+            <div class="col-md-6">
+            <small class="text-muted">Ukuran Jas</small><br>
+            <span class="font-weight-bold">M</span>
+            </div>
+        </div>
+        <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+            <small class="text-muted">Status Pernikahan</small><br>
+            <span class="font-weight-bold">Lajang</span>
+            </div>
+            <div class="col-md-6">
+            <small class="text-muted">Ukuran Kaos</small><br>
+            <span class="font-weight-bold">M</span>
+            </div>
+        </div>
+        <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+            <small class="text-muted">Nomor Telepon</small><br>
+            <span class="font-weight-bold">+62 123456789</span>
+            </div>
+            <div class="col-md-6">
+            <small class="text-muted">Ukuran Celana</small><br>
+            <span class="font-weight-bold">M</span>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-12">
+            <small class="text-muted">Email</small><br>
+            <span class="font-weight-bold">dikeprogt@gmail.com</span>
+            </div>
+        </div>
+        </div>
     </div>
-    <div class="alert alert-primary small">
-      Akun Email UNY ini berfungsi sebagai akun SSO UNY (UNITY). Akun ini digunakan untuk login ke sistem berikut
-    </div>
+</div>
 
-    <div class="row text-center">
-      <div class="col-md-3 mb-2">
-        <a href="#" class="btn btn-outline-primary btn-block">
-          <i class="fas fa-university"></i> <br> SIAKAD UNY
-        </a>
+
+      <!-- Tab 2: Riwayat Pendidikan -->
+        <div class="tab-pane fade" id="riwayat-pendidikan" role="tabpanel">
+        <div class="card mb-4 shadow-sm p-4" style="border-radius: 10px;">
+            <h5 class="font-weight-bold text-primary mb-4">
+            <i class="fas fa-graduation-cap mr-2"></i>Riwayat Pendidikan
+            </h5>
+
+            <div class="container-fluid">
+            <!-- Baris 1 -->
+            <div class="row py-2 border-bottom">
+                <div class="col-md-6">
+                <small class="text-muted">Provinsi SMA/SMK/MA</small><br />
+                <span class="font-weight-bold">Daerah Istimewa Yogyakarta</span>
+                </div>
+                <div class="col-md-6">
+                <small class="text-muted">NISN</small><br />
+                <span class="font-weight-bold">123456789</span>
+                </div>
+            </div>
+
+            <!-- Baris 2 -->
+            <div class="row py-2 border-bottom">
+                <div class="col-md-6">
+                <small class="text-muted">Kabupaten SMA/SMK/MA</small><br />
+                <span class="font-weight-bold">Sleman</span>
+                </div>
+                <div class="col-md-6">
+                <small class="text-muted">Nomor SKHUN</small><br />
+                <span class="font-weight-bold">0</span>
+                </div>
+            </div>
+
+            <!-- Baris 3 -->
+            <div class="row py-2 border-bottom">
+                <div class="col-md-6">
+                <small class="text-muted">SMA/SMK/MA</small><br />
+                <span class="font-weight-bold">SMA Negeri 21 Yogyakarta</span>
+                </div>
+                <div class="col-md-6">
+                <small class="text-muted">Rata-rata Nilai Ujian Nasional</small><br />
+                <span class="font-weight-bold">0</span>
+                </div>
+            </div>
+
+            <!-- Baris 4 -->
+            <div class="row py-2 border-bottom">
+                <div class="col-md-6">
+                <small class="text-muted">Jurusan SMA/SMK/MA</small><br />
+                <span class="font-weight-bold">IPA</span>
+                </div>
+                <div class="col-md-6">
+                <small class="text-muted">Alamat SMA/SMK/MA</small><br />
+                <span class="font-weight-bold">
+                    Jl. A.M. Sangaji No.50, Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233
+                </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+      <!-- Tab 3: Data Kependudukan -->
+      <div class="tab-pane fade" id="data-kependudukan" role="tabpanel">
+        <div class="card mb-4 shadow-sm p-4">
+           <h5 class="font-weight-bold text-primary mb-4">
+            <i class="fas fa-address-card mr-2"></i>Data Kependudukan
+        </h5>
+
+        <div class="container-fluid">
+            <!-- Baris 1 -->
+            <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+                <small class="text-muted">Punya Kartu Keluarga Sejahtera</small><br />
+                <span class="font-weight-bold">Daerah Istimewa Yogyakarta</span>
+            </div>
+            <div class="col-md-6">
+                <small class="text-muted">NIK</small><br />
+                <span class="font-weight-bold">340406190280004</span>
+            </div>
+            </div>
+
+            <!-- Baris 2 -->
+            <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+                <small class="text-muted">Kebangsaan</small><br />
+                <span class="font-weight-bold">Sleman</span>
+            </div>
+            <div class="col-md-6">
+                <small class="text-muted">Kode Pos</small><br />
+                <span class="font-weight-bold">55284</span>
+            </div>
+            </div>
+
+            <!-- Baris 3 -->
+            <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+                <small class="text-muted">Tanggal Habis Masa Berlaku Identitas</small><br />
+                <span class="font-weight-bold">SMA Negeri 21 Yogyakarta</span>
+            </div>
+            <div class="col-md-6">
+                <small class="text-muted">Desa/Kelurahan</small><br />
+                <span class="font-weight-bold">Sindudadi</span>
+            </div>
+            </div>
+
+            <!-- Baris 4 -->
+            <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+                <small class="text-muted">Alamat KTP</small><br />
+                <span class="font-weight-bold">Jl. Pogung Kidul No. 34</span>
+            </div>
+            <div class="col-md-6">
+                <small class="text-muted">Dusun</small><br />
+                <span class="font-weight-bold">Pogung Kidul</span>
+            </div>
+            </div>
+
+            <!-- Baris 5 -->
+            <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+                <small class="text-muted">RT</small><br />
+                <span class="font-weight-bold">RT 5</span>
+            </div>
+            <div class="col-md-6">
+                <small class="text-muted">Nomor Kartu Indonesia Sehat</small><br />
+                <span class="font-weight-bold">-</span>
+            </div>
+            </div>
+
+            <!-- Baris 6 -->
+            <div class="row py-2 border-bottom">
+            <div class="col-md-6">
+                <small class="text-muted">RW</small><br />
+                <span class="font-weight-bold">RW 6</span>
+            </div>
+            <div class="col-md-6">
+                <small class="text-muted">File Kartu Indonesia Sehat</small><br />
+                <span class="badge badge-danger px-2 py-1" style="font-size: 0.85rem;">Tidak memiliki Kartu Indonesia Sehat</span>
+            </div>
+            </div>
+        </div>
+        </div>
+        
       </div>
-      <div class="col-md-3 mb-2">
-        <a href="#" class="btn btn-outline-primary btn-block">
-          <i class="fas fa-envelope"></i> <br> Webmail UNY
-        </a>
+
+   <!-- Tab 4: Data Orang Tua / Wali -->
+<div class="tab-pane fade" id="data-ortu" role="tabpanel">
+  <div class="card mb-4 shadow-sm p-4" style="border-radius: 10px;">
+    <h5 class="font-weight-bold text-primary mb-4">
+      <i class="fas fa-users mr-2"></i>Data Orang Tua / Wali
+    </h5>
+
+    <div class="container-fluid">
+      <!-- Data Ayah -->
+      <div class="row py-2 border-bottom bg-light">
+        <div class="col-12">
+          <strong class="text-uppercase">Data Ayah</strong>
+        </div>
       </div>
-      <div class="col-md-3 mb-2">
-        <a href="#" class="btn btn-outline-primary btn-block">
-          <i class="fas fa-chalkboard-teacher"></i> <br> Besmart UNY
-        </a>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Nama Ayah</small><br />
+          <span class="font-weight-bold">Agung Prasetyo</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Pendidikan Ayah</small><br />
+          <span class="font-weight-bold">Sarjana</span>
+        </div>
       </div>
-      <div class="col-md-3 mb-2">
-        <a href="#" class="btn btn-outline-primary btn-block">
-          <i class="fas fa-award"></i> <br> Presma UNY
-        </a>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Tanggal Lahir Ayah</small><br />
+          <span class="font-weight-bold">23-08-1967</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Pekerjaan Ayah</small><br />
+          <span class="font-weight-bold">Pegawai Negeri Sipil</span>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">NIK Ayah</small><br />
+          <span class="font-weight-bold">340404210280004</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Penghasilan Ayah</small><br />
+          <span class="font-weight-bold">Rp. 10.000.000</span>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Kebutuhan Khusus Ayah</small><br />
+          <span class="font-weight-bold">Tidak Berkebutuhan Khusus</span>
+        </div>
+      </div>
+
+      <!-- Data Ibu -->
+      <div class="row py-2 border-bottom bg-light mt-4">
+        <div class="col-12">
+          <strong class="text-uppercase">Data Ibu</strong>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Nama Ibu</small><br />
+          <span class="font-weight-bold">Siti Nurhalizah</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Pendidikan Ibu</small><br />
+          <span class="font-weight-bold">Sarjana</span>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Tanggal Lahir Ibu</small><br />
+          <span class="font-weight-bold">05-04-1971</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Pekerjaan Ibu</small><br />
+          <span class="font-weight-bold">Karyawan Swasta</span>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">NIK Ibu</small><br />
+          <span class="font-weight-bold">340404210280004</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Penghasilan Ibu</small><br />
+          <span class="font-weight-bold">Rp. 7.000.000</span>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Kebutuhan Khusus Ibu</small><br />
+          <span class="font-weight-bold">Tidak Berkebutuhan Khusus</span>
+        </div>
+      </div>
+
+      <!-- Wali dan Alamat -->
+      <div class="row py-2 border-bottom bg-light mt-4">
+        <div class="col-12">
+          <strong class="text-uppercase">Wali dan Alamat</strong>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Punya Wali</small><br />
+          <span class="font-weight-bold">Tidak</span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Telepon Orang Tua/Wali</small><br />
+          <span class="font-weight-bold">+62123456789</span>
+        </div>
+      </div>
+
+      <div class="row py-2 border-bottom">
+        <div class="col-md-6">
+          <small class="text-muted">Alamat Orang Tua/Wali</small><br />
+          <span class="font-weight-bold">
+            Kaliurang St No.KM. 5, Kocoran, Sindudat, Mlati, Sleman Regency, Special Region of Yogyakarta 55281
+          </span>
+        </div>
+        <div class="col-md-6">
+          <small class="text-muted">Kode Pos Orang Tua/Wali</small><br />
+          <span class="font-weight-bold">55281</span>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <!-- <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer> -->
-            <!-- End of Footer -->
-
         </div>
-        <!-- End of Content Wrapper -->
+      </div>
 
     </div>
-    <!-- End of Page Wrapper -->
+  </div>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
