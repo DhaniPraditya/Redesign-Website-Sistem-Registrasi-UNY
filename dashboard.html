@@ -42,19 +42,12 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="dashboard.html">
-                    <i class="bi bi-grid-1x2-fill"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Main Menu
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html">
+              <i class="bi bi-grid-1x2-fill"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -79,14 +72,6 @@
                 </a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Lain-lain
-            </div>
-
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="https://password.uny.ac.id/">
@@ -101,9 +86,6 @@
                     <i class="bi bi-mortarboard-fill"></i>
                     <span>Update Nama Mahasiswa</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
 
         </ul>
@@ -339,19 +321,22 @@
 
                        <!-- Cetak Dokumen -->
   <div class="col-md-6 mb-3">
-    <div class="card shadow-sm p-3 h-100">
-      <h6 class="font-weight-bold mb-2">Cetak Dokumen</h6>
-      <p class="text-muted mb-3">Cetak dokumen Kartu Registrasi dan Pernyataan etika dibawah ini dan serahkan pada saat cetak Kartu Tanda Mahasiswa.</p>
-      <div class="d-flex flex-wrap">
-        <a href="#" class="btn btn-success mr-2 mb-2">
-          Kartu Registrasi <i class="fas fa-print ml-1"></i>
-        </a>
-        <a href="#" class="btn btn-success mb-2">
-          Pernyataan Etika <i class="fas fa-file-alt ml-1"></i>
-        </a>
-      </div>
+  <div class="card shadow-sm p-3 h-100">
+    <h6 class="font-weight-bold mb-2">Cetak Dokumen</h6>
+    <p class="text-muted mb-3">
+      Cetak dokumen Kartu Registrasi dan Pernyataan Etika di bawah ini dan serahkan pada saat cetak Kartu Tanda Mahasiswa.
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="#" class="btn btn-success flex-fill me-2 mb-2">
+        Kartu Registrasi <i class="fas fa-print ms-1"></i>
+      </a>
+      <a href="#" class="btn btn-success flex-fill mb-2 ml-2">
+        Pernyataan Etika <i class="fas fa-file-alt ms-1"></i>
+      </a>
     </div>
   </div>
+</div>
+
 
   <!-- Unggah Dokumen -->
   <div class="col-md-6 mb-3">
@@ -430,6 +415,21 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentPage = window.location.pathname.split("/").pop(); // Ambil nama file
+    const navLinks = document.querySelectorAll(".nav-item a.nav-link");
+
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute("href");
+      if (linkPage === currentPage) {
+        link.parentElement.classList.add("active");
+      }
+    });
+  });
+</script>
+
 
 </body>
 
