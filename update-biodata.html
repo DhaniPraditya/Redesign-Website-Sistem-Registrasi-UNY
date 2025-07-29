@@ -568,39 +568,39 @@
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script>
- function updateStepIndicator(stepIndex) {
-  const icons = document.querySelectorAll('.step-icon');
-  const lines = document.querySelectorAll('.step-line');
+      function updateStepIndicator(stepIndex) {
+        const icons = document.querySelectorAll('.step-icon');
+        const lines = document.querySelectorAll('.step-line');
 
-  icons.forEach((icon, index) => {
-    if (index < stepIndex) {
-      icon.classList.add('text-success');
-      icon.classList.remove('text-primary', 'text-muted');
-    } else if (index === stepIndex) {
-      icon.classList.add('text-primary');
-      icon.classList.remove('text-success', 'text-muted');
-    } else {
-      icon.classList.add('text-muted');
-      icon.classList.remove('text-success', 'text-primary');
-    }
-  });
+        icons.forEach((icon, index) => {
+          if (index < stepIndex) {
+            icon.classList.add('text-success');
+            icon.classList.remove('text-primary', 'text-muted');
+          } else if (index === stepIndex) {
+            icon.classList.add('text-primary');
+            icon.classList.remove('text-success', 'text-muted');
+          } else {
+            icon.classList.add('text-muted');
+            icon.classList.remove('text-success', 'text-primary');
+          }
+        });
 
-  lines.forEach((line, index) => {
-    if (index < stepIndex) {
-      line.classList.add('bg-primary');
-      line.classList.remove('bg-muted');
-    } else {
-      line.classList.remove('bg-primary');
-      line.classList.add('bg-muted');
-    }
-  });
-}
+        lines.forEach((line, index) => {
+          if (index < stepIndex) {
+            line.classList.add('bg-primary');
+            line.classList.remove('bg-muted');
+          } else {
+            line.classList.remove('bg-primary');
+            line.classList.add('bg-muted');
+          }
+        });
+      }
 
-</script>
+      </script>
 
 
     <script>
