@@ -607,41 +607,109 @@
 
 
 <!-- STEP 4: DATA ORANG TUA / WALI (Awalnya disembunyikan) -->
-<div id="form-step-4" style="display: none;">
-  <h6 class="font-weight-bold text-gray-900"><i class="fas fa-user-friends mr-2"></i>Data Orang Tua / Wali</h6>
+    <div id="form-step-4" style="display: none;">
+        <div id="step4-substep1" class="step4-substep">
+
+      <h6 class="font-weight-bold text-gray-900"><i class="fas fa-user-friends mr-2"></i>Data Orang Tua / Wali</h6>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Nama Ayah <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="nama_ayah" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Pekerjaan Ayah <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="pekerjaan_ayah" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Nama Ibu <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="nama_ibu" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Pekerjaan Ibu <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="pekerjaan_ibu" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Alamat Orang Tua / Wali <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="alamat_ortu" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Nomor Telepon Orang Tua / Wali <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="telepon_ortu" required>
+        </div>
+      </div>
+      <div class="text-right">
+        <button type="button" class="btn btn-secondary" onclick="backToStep3()">Kembali</button>
+    <button type="button" class="btn btn-primary" onclick="goToStep4Substep(2)">Selanjutnya</button>
+      </div>
+      </div>
+
+
+    <!-- SUBSTEP 2: Data Ibu -->
+<div id="step4-substep2" class="step4-substep d-none">
+  <h6 class="font-weight-bold text-gray-900"><i class="fas fa-user-friends mr-2"></i>Data Ibu</h6>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label>Nama Ayah <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="nama_ayah" required>
-    </div>
-    <div class="form-group col-md-6">
-      <label>Pekerjaan Ayah <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="pekerjaan_ayah" required>
-    </div>
     <div class="form-group col-md-6">
       <label>Nama Ibu <span class="text-danger">*</span></label>
       <input type="text" class="form-control" name="nama_ibu" required>
     </div>
     <div class="form-group col-md-6">
+      <label>Pendidikan Ibu <span class="text-danger">*</span></label>
+      <select class="form-control" name="pendidikan_ibu" required></select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Tanggal Lahir Ibu <span class="text-danger">*</span></label>
+      <input type="date" class="form-control" name="tgl_lahir_ibu" required>
+    </div>
+    <div class="form-group col-md-6">
       <label>Pekerjaan Ibu <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="pekerjaan_ibu" required>
+      <select class="form-control" name="pekerjaan_ibu" required></select>
     </div>
     <div class="form-group col-md-6">
-      <label>Alamat Orang Tua / Wali <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="alamat_ortu" required>
+      <label>NIK Ibu <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="nik_ibu" required>
     </div>
     <div class="form-group col-md-6">
-      <label>Nomor Telepon Orang Tua / Wali <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="telepon_ortu" required>
+      <label>Penghasilan Ibu <span class="text-danger">*</span></label>
+      <select class="form-control" name="penghasilan_ibu" required></select>
+    </div>
+    <div class="form-group col-md-12">
+      <label>Kebutuhan Khusus Ibu <span class="text-danger">*</span></label>
+      <select class="form-control" name="kebutuhan_khusus_ibu" required></select>
     </div>
   </div>
-  <div class="text-right">
-    <button type="button" class="btn btn-secondary" onclick="backToStep3()">Kembali</button>
-    <button type="button" class="btn btn-primary" onclick="showSelesaiModal()">Simpan</button>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary" onclick="goToStep4Substep(1)">Kembali</button>
+    <button type="button" class="btn btn-primary" onclick="goToStep4Substep(3)">Selanjutnya</button>
   </div>
 </div>
 
-
+<!-- SUBSTEP 3: Wali & Alamat -->
+<div id="step4-substep3" class="step4-substep d-none">
+  <h6 class="font-weight-bold text-gray-900"><i class="fas fa-user-friends mr-2"></i>Wali & Alamat</h6>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Punya Wali? <span class="text-danger">*</span></label>
+      <select class="form-control" name="punya_wali" required></select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Telepon Orang Tua/Wali <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="telepon_wali" placeholder="+62..." required>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Alamat Orang Tua/Wali <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="alamat_wali" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Kode Pos Orang Tua/Wali <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" name="kode_pos_wali" required>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary" onclick="goToStep4Substep(2)">Kembali</button>
+    <button type="button" class="btn btn-success" onclick="showSelesaiModal()">Simpan</button>
+  </div>
+</div>
+</div>
   </div>
 </div>
 <!-- /.container-fluid -->
@@ -837,6 +905,28 @@ function goToStep(stepNumber) {
   });
 </script>
 
+<script>
+  function goToStep4Substep(substep) {
+    const totalSubsteps = 3;
+    for (let i = 1; i <= totalSubsteps; i++) {
+      const div = document.getElementById(`step4-substep${i}`);
+      if (div) div.classList.add('d-none');
+    }
+    const target = document.getElementById(`step4-substep${substep}`);
+    if (target) target.classList.remove('d-none');
+  }
+
+  function backToStep3() {
+    // kembali ke step 3
+    document.getElementById("form-step-4").style.display = "none";
+    document.getElementById("form-step-3").style.display = "block";
+  }
+
+  function showSelesaiModal() {
+    // tampilkan modal simpan atau validasi
+    alert("Form disimpan!"); // ganti sesuai kebutuhan
+  }
+</script>
 
 
 <!-- MODAL REGISTRASI SELESAI -->
