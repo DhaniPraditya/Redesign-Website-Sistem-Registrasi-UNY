@@ -406,10 +406,9 @@
     </div>
   </div>
   <div class="d-flex justify-content-between">
-    <button type="button" class="btn btn-secondary" onclick="backToStep1()">Kembali</button>
-  <button type="button" class="btn btn-primary" onclick="nextSubStep(3)">Selanjutnya</button>
-    <button type="button" class="btn btn-secondary" onclick="backToStep4()">Kembali</button>
-    <button type="button" onclick="nextSubStep(3)">Selanjutnya</button>
+    <button type="button" class="btn btn-secondary" onclick="backSubStep(1)">Kembali</button>
+    <button type="button" class="btn btn-primary" onclick="nextSubStep(3)">Selanjutnya</button>
+  
   </div>
 </form>
 
@@ -461,7 +460,7 @@
     </div>
   </div>
   <div class="d-flex justify-content-between">
-    <button type="button" class="btn btn-secondary" onclick="backToStep2()">Kembali</button>
+    <button type="button" class="btn btn-secondary" onclick="backSubStep(2)">Kembali</button>
   <button type="button" class="btn btn-primary" onclick="nextSubStep(4)">Selanjutnya</button>
   </div>
 </form>
@@ -490,7 +489,7 @@
     
   </div>
   <div class="d-flex justify-content-between">
-    <button type="button" class="btn btn-secondary" onclick="backToStep3()">Kembali</button>
+    <button type="button" class="btn btn-secondary" onclick="backSubStep(3)">Kembali</button>
         <button type="button" class="btn btn-primary" onclick="goToStep2()">Selanjutnya</button>
   </div>
 </form>
@@ -761,36 +760,36 @@
     
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-    <script>
-      function updateStepIndicator(stepIndex) {
-        const icons = document.querySelectorAll('.step-icon');
-        const lines = document.querySelectorAll('.step-line');
+      <script>
+        function updateStepIndicator(stepIndex) {
+          const icons = document.querySelectorAll('.step-icon');
+          const lines = document.querySelectorAll('.step-line');
 
-        icons.forEach((icon, index) => {
-          if (index < stepIndex) {
-            icon.classList.add('text-success');
-            icon.classList.remove('text-primary', 'text-muted');
-          } else if (index === stepIndex) {
-            icon.classList.add('text-primary');
-            icon.classList.remove('text-success', 'text-muted');
-          } else {
-            icon.classList.add('text-muted');
-            icon.classList.remove('text-success', 'text-primary');
-          }
-        });
+          icons.forEach((icon, index) => {
+            if (index < stepIndex) {
+              icon.classList.add('text-success');
+              icon.classList.remove('text-primary', 'text-muted');
+            } else if (index === stepIndex) {
+              icon.classList.add('text-primary');
+              icon.classList.remove('text-success', 'text-muted');
+            } else {
+              icon.classList.add('text-muted');
+              icon.classList.remove('text-success', 'text-primary');
+            }
+          });
 
-        lines.forEach((line, index) => {
-          if (index < stepIndex) {
-            line.classList.add('bg-primary');
-            line.classList.remove('bg-muted');
-          } else {
-            line.classList.remove('bg-primary');
-            line.classList.add('bg-muted');
-          }
-        });
-      }
-
+          lines.forEach((line, index) => {
+            if (index < stepIndex) {
+              line.classList.add('bg-primary');
+              line.classList.remove('bg-muted');
+            } else {
+              line.classList.remove('bg-primary');
+              line.classList.add('bg-muted');
+            }
+          });
+        }
       </script>
+
 
 
     <script>
@@ -837,73 +836,62 @@
   });
 </script>
 
-  <script>
-    let currentSubstep = 1;
+<script>
+  let currentSubstep = 1;
 
-function nextSubStep(next) {
-  document.getElementById(`step1-substep${currentSubstep}`).classList.add('d-none');
-  currentSubstep = next;
-  document.getElementById(`step1-substep${currentSubstep}`).classList.remove('d-none');
-}
+  function nextSubStep(next) {
+    document.getElementById(`step1-substep${currentSubstep}`).classList.add('d-none');
+    currentSubstep = next;
+    document.getElementById(`step1-substep${currentSubstep}`).classList.remove('d-none');
+  }
 
-function goToStep(stepNumber) {
-  // sembunyikan semua substep
-  document.querySelectorAll('.step1-substep').forEach(div => div.classList.add('d-none'));
-  // sembunyikan step 1 (kalau kamu bungkus dengan <div id="step1">)
-  document.getElementById('step1').classList.add('d-none');
-  // tampilkan step 2
-  document.getElementById(`step${stepNumber}`).classList.remove('d-none');
-}
+  function backSubStep(prev) {
+    document.getElementById(`step1-substep${currentSubstep}`).classList.add('d-none');
+    currentSubstep = prev;
+    document.getElementById(`step1-substep${currentSubstep}`).classList.remove('d-none');
+  }
+</script>
 
-  </script>
 
 <script>
   function goToStep2() {
-    document.getElementById('step1-substep4').style.display = 'none';
+    document.getElementById(`step1-substep${currentSubstep}`).classList.add('d-none');
     document.getElementById('form-step-2').style.display = 'block';
-    updateStepIndicator(1); // Step 2
+    updateStepIndicator(1);
   }
 
   function backToStep1() {
     document.getElementById('form-step-2').style.display = 'none';
-    document.getElementById('form-step-1').style.display = 'block';
-    updateStepIndicator(0); // Step 1
+    currentSubstep = 4;
+    document.getElementById(`step1-substep${currentSubstep}`).classList.remove('d-none');
+    updateStepIndicator(0);
   }
 
   function goToStep3() {
     document.getElementById('form-step-2').style.display = 'none';
     document.getElementById('form-step-3').style.display = 'block';
-    updateStepIndicator(2); // Step 3
+    updateStepIndicator(2);
   }
 
   function backToStep2() {
     document.getElementById('form-step-3').style.display = 'none';
     document.getElementById('form-step-2').style.display = 'block';
-    updateStepIndicator(1); // Step 2
+    updateStepIndicator(1);
   }
 
   function goToStep4() {
     document.getElementById('form-step-3').style.display = 'none';
     document.getElementById('form-step-4').style.display = 'block';
-    updateStepIndicator(3); // Step 4
+    updateStepIndicator(3);
   }
 
   function backToStep3() {
     document.getElementById('form-step-4').style.display = 'none';
     document.getElementById('form-step-3').style.display = 'block';
-    updateStepIndicator(2); // Step 3
-  }
-
-    function backToStep4() {
-    document.getElementById('step1-substep2').style.display = 'none';
-    document.getElementById('step1-substep1').style.display = 'block';
-    updateStepIndicator(1); // Step 3
-  }
-
-  function showSelesaiModal() {
-    $('#modalSelesai').modal('show');
+    updateStepIndicator(2);
   }
 </script>
+
 
 <script>
   const currentPage = window.location.pathname.split("/").pop();
@@ -914,6 +902,15 @@ function goToStep(stepNumber) {
     }
   });
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // tampilkan substep 1 saat awal
+    document.getElementById('step1-substep1').classList.remove('d-none');
+    updateStepIndicator(0);
+  });
+</script>
+
 
 <script>
   function goToStep4Substep(substep) {
