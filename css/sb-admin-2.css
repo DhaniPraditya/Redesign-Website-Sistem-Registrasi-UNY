@@ -10337,7 +10337,6 @@ a:focus {
 .sidebar .nav-item .nav-link {
   text-align: center;
   padding: 0.75rem 1rem;
-  width: 6.5rem;
   color: gray !important;
 }
 
@@ -10349,14 +10348,15 @@ a:focus {
 
 .sidebar .nav-item.active .nav-link {
   font-weight: 700;
+
 }
 
-.nav-item.active .nav-link {
+.sidebar .nav-item .nav-link.active {
   background-color: #224abe !important;
   color: white !important;
   border-radius: 0.35rem;
-  padding: 20px;
 }
+
 
 
 .sidebar .nav-item .collapse {
@@ -10543,13 +10543,15 @@ a:focus {
   .sidebar .nav-item .collapsing {
     margin: 0 1rem;
   }
-  .sidebar .nav-item .nav-link {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 1rem;
-    width: 14rem;
-  }
+.sidebar .nav-item .nav-link {
+  text-align: left;
+  width: 12rem;
+  padding: 1rem;   
+  margin-top: 0.2rem;            
+  margin-left: 0.5rem;         /* Jarak dari sisi kiri sidebar */
+  margin-right: 0.5rem;        /* Jarak dari sisi kanan sidebar */
+  border-radius: 0.35rem;      /* Opsional: biar agak membulat */
+}
   .sidebar .nav-item .nav-link i {
     font-size: 0.85rem;
     margin-right: 0.25rem;
