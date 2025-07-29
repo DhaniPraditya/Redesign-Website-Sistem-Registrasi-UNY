@@ -689,6 +689,17 @@
   }
 </script>
 
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".sidebar-dark .nav-link").forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage && linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+
 
 <!-- MODAL REGISTRASI SELESAI -->
 <div class="modal fade" id="modalSelesai" tabindex="-1" role="dialog" aria-labelledby="modalSelesaiLabel" aria-hidden="true">

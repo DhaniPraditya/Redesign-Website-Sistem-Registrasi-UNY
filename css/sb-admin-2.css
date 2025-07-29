@@ -10341,6 +10341,7 @@ a:focus {
   color: gray !important;
 }
 
+
 .sidebar .nav-item .nav-link span {
   font-size: 0.65rem;
   display: block;
@@ -10354,6 +10355,7 @@ a:focus {
   background-color: #224abe !important;
   color: white !important;
   border-radius: 0.35rem;
+  padding: 20px;
 }
 
 
@@ -10699,33 +10701,35 @@ a:focus {
   color: gray;
 }
 
-.sidebar-dark .nav-item .nav-link {
-  color: gray ;
-}
 
+
+/* Default icon color (semua menu) */
 .sidebar-dark .nav-item .nav-link i {
   color: gray !important;
 }
 
-.sidebar-dark .nav-item .nav-link:active, .sidebar-dark .nav-item .nav-link:focus, .sidebar-dark .nav-item .nav-link:hover {
+/* Icon jadi putih hanya jika menu aktif */
+.sidebar-dark .nav-item .nav-link.active i {
+  color: white !important;
+}
+
+/* Hover atau focus: teks dan icon ikut highlight */
+.sidebar-dark .nav-item .nav-link:hover,
+.sidebar-dark .nav-item .nav-link:focus {
   color: var(--blue) !important;
 }
 
-.sidebar-dark .nav-item .nav-link:active i, .sidebar-dark .nav-item .nav-link:focus i, .sidebar-dark .nav-item .nav-link:hover i {
-  color: gray !important;
+.sidebar-dark .nav-item .nav-link:hover i,
+.sidebar-dark .nav-item .nav-link:focus i {
+  color: #f0f0f0 !important;
 }
 
+
+/* Collapse arrow (jika pakai dropdown menu sidebar) */
 .sidebar-dark .nav-item .nav-link[data-toggle="collapse"]::after {
   color: gray !important;
 }
 
-.sidebar-dark .nav-item.active .nav-link {
-  color: #fff;
-}
-
-.sidebar-dark .nav-item.active .nav-link i {
-  color: #fff;
-}
 
 .sidebar-dark #sidebarToggle {
   background-color: rgba(255, 255, 255, 0.2);

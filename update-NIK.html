@@ -382,6 +382,17 @@
   });
 </script>
 
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".sidebar-dark .nav-link").forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage && linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
+
 
 </body>
 
