@@ -408,6 +408,8 @@
   <div class="d-flex justify-content-between">
     <button type="button" class="btn btn-secondary" onclick="backToStep1()">Kembali</button>
   <button type="button" class="btn btn-primary" onclick="nextSubStep(3)">Selanjutnya</button>
+    <button type="button" class="btn btn-secondary" onclick="backToStep4()">Kembali</button>
+    <button type="button" onclick="nextSubStep(3)">Selanjutnya</button>
   </div>
 </form>
 
@@ -607,8 +609,6 @@
     <button type="button" class="btn btn-primary" onclick="goToStep4()">Selanjutnya</button>
   </div>
 </div>
-
-
 
 <!-- STEP 4: DATA ORANG TUA / WALI (Awalnya disembunyikan) -->
     <div id="form-step-4" style="display: none;">
@@ -894,6 +894,12 @@ function goToStep(stepNumber) {
     updateStepIndicator(2); // Step 3
   }
 
+    function backToStep4() {
+    document.getElementById('step1-substep2').style.display = 'none';
+    document.getElementById('step1-substep1').style.display = 'block';
+    updateStepIndicator(1); // Step 3
+  }
+
   function showSelesaiModal() {
     $('#modalSelesai').modal('show');
   }
@@ -931,6 +937,9 @@ function goToStep(stepNumber) {
     alert("Form disimpan!"); // ganti sesuai kebutuhan
   }
 </script>
+
+
+
 
 
 <!-- MODAL REGISTRASI SELESAI -->
