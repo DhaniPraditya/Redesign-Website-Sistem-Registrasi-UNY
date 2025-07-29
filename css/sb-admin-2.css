@@ -10353,7 +10353,7 @@ a:focus {
 .nav-item.active .nav-link {
   background-color: #224abe !important;
   color: white !important;
-  border-radius: 0.35rem;
+  border-radius: 8px;
 }
 
 
