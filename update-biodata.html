@@ -251,7 +251,7 @@
 
 
     <!-- STEP 1: DATA DIRI -->
-    <form  id="form-step-1">
+    <form  id="step1-substep1">
           <h6 class="font-weight-bold text-gray-900"><i class="fas fa-address-card mr-2"></i>Data Diri</h6>
 
       <div class="form-row">
@@ -369,9 +369,126 @@
       </div>
 
       <div class="text-right">
-        <button type="button" class="btn btn-primary" onclick="goToStep2()">Selanjutnya</button>
+  <button type="button" onclick="nextSubStep(2)">Selanjutnya</button>
       </div>
     </form>
+
+    <!-- STEP 2: Alamat -->
+<form id="step1-substep2" class="step1-substep d-none">
+  <h6 class="font-weight-bold"><i class="fas fa-map-marker-alt mr-2"></i>Alamat</h6>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Alamat Domisili <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Alamat Asal <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Provinsi Asal <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option>- Pilih -</option>
+        <!-- Tambahkan daftar provinsi -->
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Kabupaten Asal <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option>- Pilih -</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Kecamatan Asal <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option>- Pilih -</option>
+      </select>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary" onclick="backToStep1()">Kembali</button>
+  <button type="button" onclick="nextSubStep(3)">Selanjutnya</button>
+  </div>
+</form>
+
+<!-- STEP 3: Media Sosial -->
+<form id="step1-substep3" class="step1-substep d-none">
+  <h6 class="font-weight-bold"><i class="bi bi-share-fill mr-2"></i>Media Sosial</h6>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>LinkedIn</label>
+      <input type="url" class="form-control" placeholder="Misal: https://linkedin.com/in/*****">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Facebook</label>
+      <input type="url" class="form-control" placeholder="Misal: https://facebook.com/*****">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Instagram</label>
+      <input type="url" class="form-control" placeholder="Misal: https://instagram.com/*****">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Twitter</label>
+      <input type="url" class="form-control" placeholder="Misal: https://twitter.com/*****">
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary" onclick="backToStep2()">Kembali</button>
+  <button type="button" onclick="nextSubStep(4)">Selanjutnya</button>
+  </div>
+</form>
+
+<!-- STEP 4: Data Sosial dan Kegiatan -->
+<form id="step1-substep4" class="step1-substep d-none">
+  <h6 class="font-weight-bold"><i class="bi bi-people-fill mr-2"></i>Data Sosial dan Kegiatan Mahasiswa</h6>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Hobi</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Keterampilan</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Organisasi Mahasiswa UNY</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Organisasi Lain</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Penyakit</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Kebutuhan Khusus <span class="text-danger">*</span></label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Pekerjaan Mahasiswa <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option>- Pilih -</option>
+        <option>Tidak Bekerja</option>
+        <option>Bekerja</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Apakah Anda orang pertama yang kuliah di UNY dalam keluarga? <span class="text-danger">*</span></label>
+      <select class="form-control">
+        <option>- Pilih -</option>
+        <option>Ya</option>
+        <option>Tidak</option>
+      </select>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button type="button" class="btn btn-secondary" onclick="backToStep3()">Kembali</button>
+        <button type="button" class="btn btn-primary" onclick="goToStep2()">Selanjutnya</button>
+  </div>
+</form>
+
 
     <!-- STEP 2: RIWAYAT PENDIDIKAN (Awalnya disembunyikan) -->
     <div id="form-step-2" style="display: none;">
@@ -648,9 +765,29 @@
   });
 </script>
 
+  <script>
+    let currentSubstep = 1;
+
+function nextSubStep(next) {
+  document.getElementById(`step1-substep${currentSubstep}`).classList.add('d-none');
+  currentSubstep = next;
+  document.getElementById(`step1-substep${currentSubstep}`).classList.remove('d-none');
+}
+
+function goToStep(stepNumber) {
+  // sembunyikan semua substep
+  document.querySelectorAll('.step1-substep').forEach(div => div.classList.add('d-none'));
+  // sembunyikan step 1 (kalau kamu bungkus dengan <div id="step1">)
+  document.getElementById('step1').classList.add('d-none');
+  // tampilkan step 2
+  document.getElementById(`step${stepNumber}`).classList.remove('d-none');
+}
+
+  </script>
+
 <script>
   function goToStep2() {
-    document.getElementById('form-step-1').style.display = 'none';
+    document.getElementById('step1-substep4').style.display = 'none';
     document.getElementById('form-step-2').style.display = 'block';
     updateStepIndicator(1); // Step 2
   }
