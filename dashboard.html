@@ -102,29 +102,7 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
+                        
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -334,13 +312,19 @@
 
   <!-- Unggah Dokumen -->
   <div class="col-md-6 mb-3">
-    <div class="card shadow-sm p-3 h-100" style="border-radius: 12px;">
-      <h6 class="font-weight-bold mb-2 text-gray-900">Unggah Dokumen</h6>
-      <p class="text-muted mb-3">Unggah Pernyataan Etika yang sudah ditandatangani di atas materai, Surat Sehat, Surat Bebas Napza dengan klik tombol di bawah.</p>
-      <a href="#" class="btn btn-success" style="border-radius: 8px;">
-        Unggah <i class="fas fa-upload ml-1"></i>
-      </a>
-    </div>
+  <div class="card shadow-sm p-3 h-100" style="border-radius: 12px;">
+    <h6 class="font-weight-bold mb-2 text-gray-900">Unggah Dokumen</h6>
+    <p class="text-muted mb-3">
+      Unggah Pernyataan Etika yang sudah ditandatangani di atas materai, Surat Sehat, Surat Bebas Napza dengan klik tombol di bawah.
+    </p>
+
+    <!-- Tombol custom -->
+    <a href="#" class="btn btn-success mt-4" style="border-radius: 8px;" onclick="document.getElementById('fileUpload').click(); return false;">
+      Unggah <i class="fas fa-upload ml-1"></i>
+    </a>
+
+    <!-- Input file tersembunyi -->
+    <input type="file" id="fileUpload" name="dokumen" style="display: none;" onchange="handleFileUpload(this)">
   </div>
 </div>
                         </div>
@@ -434,7 +418,14 @@
   });
 </script>
 
-
+<script>
+  function handleFileUpload(input) {
+    if (input.files.length > 0) {
+      alert("File dipilih: " + input.files[0].name);
+      // Di sini bisa kamu lanjutkan proses upload dengan AJAX atau form submission
+    }
+  }
+</script>
 
 </body>
 
