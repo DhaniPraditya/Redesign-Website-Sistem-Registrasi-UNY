@@ -36,7 +36,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.html">
             
-                <img src="../img/Logo-UNY.svg" style="width: 150px;">
+                <img src="../img/Logo-UNY.svg" class="logo-img">
                 
             </a>
 
@@ -375,7 +375,7 @@
 
     <!-- STEP 2: Alamat -->
 <form id="step1-substep2" class="step1-substep d-none">
-  <h6 class="font-weight-bold"><i class="fas fa-map-marker-alt mr-2"></i>Alamat</h6>
+  <h6 class=" text-gray-900 font-weight-bold"><i class="fas fa-map-marker-alt mr-2"></i>Alamat</h6>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>Alamat Domisili <span class="text-danger">*</span></label>
@@ -389,19 +389,91 @@
       <label>Provinsi Asal <span class="text-danger">*</span></label>
       <select class="form-control">
         <option>- Pilih -</option>
-        <!-- Tambahkan daftar provinsi -->
+        <option>Aceh</option>
+        <option>Sumatera Utara</option>
+        <option>Sumatera Barat</option>
+        <option>Riau</option>
+        <option>Kepulauan Riau</option>
+        <option>Jambi</option>
+        <option>Sumatera Selatan</option>
+        <option>Bangka Belitung</option>
+        <option>Bengkulu</option>
+        <option>Lampung</option>
+        <option>DKI Jakarta</option>
+        <option>Jawa Barat</option>
+        <option>Banten</option>
+        <option>Jawa Tengah</option>
+        <option>DI Yogyakarta</option>
+        <option>Jawa Timur</option>
+        <option>Kalimantan Barat</option>
+        <option>Kalimantan Tengah</option>
+        <option>Kalimantan Selatan</option>
+        <option>Kalimantan Timur</option>
+        <option>Kalimantan Utara</option>
+        <option>Bali</option>
+        <option>Nusa Tenggara Barat</option>
+        <option>Nusa Tenggara Timur</option>
+        <option>Sulawesi Utara</option>
+        <option>Sulawesi Tengah</option>
+        <option>Sulawesi Selatan</option>
+        <option>Sulawesi Tenggara</option>
+        <option>Sulawesi Barat</option>
+        <option>Gorontalo</option>
+        <option>Maluku</option>
+        <option>Maluku Utara</option>
+        <option>Papua</option>
+        <option>Papua Barat</option>
       </select>
     </div>
     <div class="form-group col-md-4">
       <label>Kabupaten Asal <span class="text-danger">*</span></label>
       <select class="form-control">
         <option>- Pilih -</option>
+        <option>Kota Yogyakarta</option>
+        <option>Sleman</option>
+        <option>Bantul</option>
+        <option>Kulon Progo</option>
+        <option>Gunungkidul</option>
       </select>
     </div>
     <div class="form-group col-md-4">
       <label>Kecamatan Asal <span class="text-danger">*</span></label>
       <select class="form-control">
         <option>- Pilih -</option>
+        <option>Danurejan</option>
+        <option>Gedongtengen</option>
+        <option>Gondokusuman</option>
+        <option>Gondomanan</option>
+        <option>Jetis</option>
+        <option>Kotagede</option>
+        <option>Kraton</option>
+        <option>Mantrijeron</option>
+        <option>Mergangsan</option>
+        <option>Ngampilan</option>
+        <option>Pakualaman</option>
+        <option>Tegalrejo</option>
+        <option>Umbulharjo</option>
+        <option>Wirobrajan</option>
+        <option>Cangkringan</option>
+        <option>Depok</option>
+        <option>Gamping</option>
+        <option>Godean</option>
+        <option>Grijan</option> <!-- *Catatan: kemungkinan ini maksudnya "Berbah" atau typo dari "Girikerto"? -->
+        <option>Kalasan</option>
+        <option>Minggir</option>
+        <option>Mlati</option>
+        <option>Moyudan</option>
+        <option>Ngaglik</option>
+        <option>Ngemplak</option>
+        <option>Pakem</option>
+        <option>Prambanan</option>
+        <option>Seyegan</option>
+        <option>Sleman</option>
+        <option>Tempel</option>
+        <option>Turi</option>
+        <option>Bambanglipuro</option>
+        <option>Banguntapan</option>
+        <option>Bantul</option>
       </select>
     </div>
   </div>
@@ -414,7 +486,7 @@
 
 <!-- STEP 3: Media Sosial -->
 <form id="step1-substep3" class="step1-substep d-none">
-    <h6 class="font-weight-bold"><i class="bi bi-people-fill mr-2"></i>Data Sosial dan Kegiatan Mahasiswa</h6>
+    <h6 class=" text-gray-900 font-weight-bold"><i class="bi bi-people-fill mr-2"></i>Data Sosial dan Kegiatan Mahasiswa</h6>
 
   <div class="form-row">
     
@@ -467,7 +539,7 @@
 
 <!-- STEP 4: Data Sosial dan Kegiatan -->
 <form id="step1-substep4" class="step1-substep d-none">
-    <h6 class="font-weight-bold"><i class="bi bi-share-fill mr-2"></i>Media Sosial</h6>
+    <h6 class=" text-gray-900 font-weight-bold"><i class="bi bi-share-fill mr-2"></i>Media Sosial</h6>
   <div class="form-row">
 
       <div class="form-group col-md-6">
@@ -503,8 +575,40 @@
           <label>Provinsi SMA/SMK/MA <span class="text-danger">*</span></label>
           <select class="form-control">
             <option>- Pilih -</option>
-            <option>DIY</option>
+            <option>Aceh</option>
+            <option>Sumatera Utara</option>
+            <option>Sumatera Barat</option>
+            <option>Riau</option>
+            <option>Kepulauan Riau</option>
+            <option>Jambi</option>
+            <option>Sumatera Selatan</option>
+            <option>Bangka Belitung</option>
+            <option>Bengkulu</option>
+            <option>Lampung</option>
+            <option>DKI Jakarta</option>
+            <option>Jawa Barat</option>
+            <option>Banten</option>
             <option>Jawa Tengah</option>
+            <option>DI Yogyakarta</option>
+            <option>Jawa Timur</option>
+            <option>Kalimantan Barat</option>
+            <option>Kalimantan Tengah</option>
+            <option>Kalimantan Selatan</option>
+            <option>Kalimantan Timur</option>
+            <option>Kalimantan Utara</option>
+            <option>Bali</option>
+            <option>Nusa Tenggara Barat</option>
+            <option>Nusa Tenggara Timur</option>
+            <option>Sulawesi Utara</option>
+            <option>Sulawesi Tengah</option>
+            <option>Sulawesi Selatan</option>
+            <option>Sulawesi Tenggara</option>
+            <option>Sulawesi Barat</option>
+            <option>Gorontalo</option>
+            <option>Maluku</option>
+            <option>Maluku Utara</option>
+            <option>Papua</option>
+            <option>Papua Barat</option>
             <!-- Tambahkan lainnya -->
           </select>
         </div>
@@ -514,7 +618,14 @@
         </div>
         <div class="form-group col-md-6">
           <label>Kabupaten SMA/SMK/MA <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <select class="form-control">
+            <option>- Pilih -</option>
+            <option>Kota Yogyakarta</option>
+            <option>Sleman</option>
+            <option>Bantul</option>
+            <option>Kulon Progo</option>
+            <option>Gunungkidul</option>
+          </select>
         </div>
         <div class="form-group col-md-6">
           <label>Nomor SKHUN <span class="text-danger">*</span></label>
@@ -620,25 +731,42 @@
           <input type="text" class="form-control" name="nama_ayah" required>
         </div>
         <div class="form-group col-md-6">
+          <label>Pendidikan Ayah <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="pendidikan_ayah" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Tanggal Lahir Ayah <span class="text-danger">*</span></label>
+          <input type="date" class="form-control" name="tanggal_lahir_ayah" required>
+        </div>
+        <div class="form-group col-md-6">
           <label>Pekerjaan Ayah <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="pekerjaan_ayah" required>
         </div>
         <div class="form-group col-md-6">
-          <label>Nama Ibu <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="nama_ibu" required>
+          <label>NIK Ayah <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="nik_ayah" required>
         </div>
         <div class="form-group col-md-6">
-          <label>Pekerjaan Ibu <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="pekerjaan_ibu" required>
+          <label>Penghasilan Ayah <span class="text-danger">*</span></label>
+          <select class="form-control" name="penghasilan_ibu" required>
+            <option>- Pilih -</option>
+            <option>< Rp 500.000</option>
+            <option>Rp 500.000 – Rp 1.000.000</option>
+            <option>Rp 1.000.001 – Rp 2.000.000</option>
+            <option>Rp 2.000.001 – Rp 3.000.000</option>
+            <option>Rp 3.000.001 – Rp 5.000.000</option>
+            <option>Rp 5.000.001 – Rp 10.000.000</option>
+            <option>> Rp 10.000.000</option>
+          </select>
         </div>
-        <div class="form-group col-md-6">
-          <label>Alamat Orang Tua / Wali <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="alamat_ortu" required>
-        </div>
-        <div class="form-group col-md-6">
-          <label>Nomor Telepon Orang Tua / Wali <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" name="telepon_ortu" required>
-        </div>
+        <div class="form-group col-md-12">
+      <label>Kebutuhan Khusus Ayah <span class="text-danger">*</span></label>
+      <select class="form-control" name="kebutuhan_khusus_ayah" required>
+        <option>- Pilih -</option>
+        <option>Ada</option>
+        <option>Tidak Ada</option>
+      </select>
+    </div>
       </div>
       <div class="d-flex justify-content-between">
         <button type="button" class="btn btn-secondary" onclick="backToStep3()">Kembali</button>
@@ -657,7 +785,7 @@
     </div>
     <div class="form-group col-md-6">
       <label>Pendidikan Ibu <span class="text-danger">*</span></label>
-      <select class="form-control" name="pendidikan_ibu" required></select>
+      <input type="text" class="form-control" name="pendidikan_ibu" required>
     </div>
     <div class="form-group col-md-6">
       <label>Tanggal Lahir Ibu <span class="text-danger">*</span></label>
@@ -665,7 +793,7 @@
     </div>
     <div class="form-group col-md-6">
       <label>Pekerjaan Ibu <span class="text-danger">*</span></label>
-      <select class="form-control" name="pekerjaan_ibu" required></select>
+      <input type="text" class="form-control" name="pekerjaan_ibu" required>
     </div>
     <div class="form-group col-md-6">
       <label>NIK Ibu <span class="text-danger">*</span></label>
@@ -673,11 +801,24 @@
     </div>
     <div class="form-group col-md-6">
       <label>Penghasilan Ibu <span class="text-danger">*</span></label>
-      <select class="form-control" name="penghasilan_ibu" required></select>
+      <select class="form-control" name="penghasilan_ibu" required>
+        <option>- Pilih -</option>
+        <option>< Rp 500.000</option>
+        <option>Rp 500.000 – Rp 1.000.000</option>
+        <option>Rp 1.000.001 – Rp 2.000.000</option>
+        <option>Rp 2.000.001 – Rp 3.000.000</option>
+        <option>Rp 3.000.001 – Rp 5.000.000</option>
+        <option>Rp 5.000.001 – Rp 10.000.000</option>
+        <option>> Rp 10.000.000</option>
+      </select>
     </div>
     <div class="form-group col-md-12">
       <label>Kebutuhan Khusus Ibu <span class="text-danger">*</span></label>
-      <select class="form-control" name="kebutuhan_khusus_ibu" required></select>
+      <select class="form-control" name="kebutuhan_khusus_ibu" required>
+        <option>- Pilih -</option>
+        <option>Ada</option>
+        <option>Tidak Ada</option>
+      </select>
     </div>
   </div>
   <div class="d-flex justify-content-between">
@@ -692,11 +833,15 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>Punya Wali? <span class="text-danger">*</span></label>
-      <select class="form-control" name="punya_wali" required></select>
+      <select class="form-control" name="punya_wali" required>
+        <option>- Pilih -</option>
+        <option>Ya</option>
+        <option>Tidak</option>
+      </select>
     </div>
     <div class="form-group col-md-6">
       <label>Telepon Orang Tua/Wali <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" name="telepon_wali" placeholder="+62..." required>
+      <input type="text" class="form-control" name="telepon_wali" placeholder="+62**********" required>
     </div>
     <div class="form-group col-md-6">
       <label>Alamat Orang Tua/Wali <span class="text-danger">*</span></label>
@@ -929,9 +1074,8 @@
     document.getElementById("form-step-3").style.display = "block";
   }
 
-  function showSelesaiModal() {
-    // tampilkan modal simpan atau validasi
-    alert("Form disimpan!"); // ganti sesuai kebutuhan
+ function showSelesaiModal() {
+    $('#modalSelesai').modal('show');
   }
 </script>
 
