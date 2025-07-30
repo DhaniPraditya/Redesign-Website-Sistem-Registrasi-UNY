@@ -3218,6 +3218,7 @@ input[type="button"].btn-block {
 
 .dropdown-menu.show {
   display: block;
+  z-index: 1060;
 }
 
 .dropdown-header {
@@ -11302,3 +11303,12 @@ body.sidebar-toggled footer.sticky-footer {
   height: auto;
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* overlay hitam transparan */
+    z-index: 1040; /* di bawah alert (dropdown-menu) */
+}

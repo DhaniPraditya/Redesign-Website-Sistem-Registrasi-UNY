@@ -25,6 +25,8 @@
 
 <body id="page-top">
 
+    <div id="overlay" style="display: none;"></div>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -139,7 +141,7 @@
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
+                                aria-labelledby="alertsDropdown" style="border-radius: 8px;">
                                 <h6 class="dropdown-header">
                                     Pemberitahuan
                                 </h6>
@@ -148,7 +150,7 @@
                                     <div>
                                         <div class="small text-gray-600">7 Juli 2025</div>
                                         <span class="font-weight-bold">Anda Belum Registrasi!</span>
-                                        <p class="text-gray-800">Waktu terbatas! Klik notifikasi ini untuk registrasi sebelum 25 Juli.</p>
+                                        <p class="text-gray-700">Waktu terbatas! Klik notifikasi ini untuk registrasi sebelum 25 Juli.</p>
                                     </div>
                                     <div class="ml-3">
                                         <div class="icon-circle bg-primary">
@@ -156,6 +158,7 @@
                                         </div>
                                     </div>
                                 </a>
+                              </div> 
                         </li>
 
                     </ul>
@@ -404,6 +407,32 @@
     }
   }
 </script>
+
+<script>
+    window.addEventListener('load', function () {
+        // Munculkan dropdown alert
+        const alertDropdown = document.querySelector('#alertsDropdown');
+        const alertMenu = document.querySelector('#alertsDropdown + .dropdown-menu');
+
+        if (alertMenu) {
+            alertMenu.classList.add('show');
+            alertDropdown.setAttribute('aria-expanded', 'true');
+        }
+
+        // Tampilkan overlay
+        document.getElementById('overlay').style.display = 'block';
+
+        // Klik di mana saja untuk menutup alert dan overlay
+        document.addEventListener('click', function (e) {
+            if (!alertMenu.contains(e.target) && !alertDropdown.contains(e.target)) {
+                alertMenu.classList.remove('show');
+                alertDropdown.setAttribute('aria-expanded', 'false');
+                document.getElementById('overlay').style.display = 'none';
+            }
+        });
+    });
+</script>
+
 
 </body>
 
