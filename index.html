@@ -8,19 +8,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.7),  
-      rgba(30, 58, 138, 0.4)      
-    ),
-    url('img/Background-UNY.jpeg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.7),  
+          rgba(30, 58, 138, 0.4)      
+        ),
+        url('img/Background-UNY.jpeg'); 
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
     .login-box {
       background-color: #fff;
       padding: 2rem;
@@ -28,58 +31,120 @@
       width: 100%;
       max-width: 400px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin: 20px 0;
     }
+    
     .btn-green {
       background-color: #1cc88a;
       color: white;
     }
+    
     .btn-blue {
       background-color: #3266e3;
       color: white;
     }
+    
     .right-panel {
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
       border-radius: 1rem;
       padding: 2rem;
     }
+    
+    .mobile-info-panel {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border-radius: 1rem;
+      margin-top: 1rem;
+    }
+    
     .link-reset {
       color: #3266e3;
       font-size: 0.9rem;
       display: inline-block;
       margin-top: 1rem;
     }
+    
+    /* Mobile specific styles */
+    @media (max-width: 767.98px) {
+      body {
+        padding: 15px;
+        background-attachment: scroll;
+      }
+      
+      .login-box {
+        padding: 1.5rem;
+        margin: 10px 0;
+      }
+      
+      .form-control {
+        font-size: 0.9rem;
+      }
+      
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row w-100">
+  <div class="container-fluid px-0">
+    <div class="row mx-0 w-100 justify-content-center">
       <!-- Left Login Box -->
-      <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <div class="login-box">
+      <div class="col-12 col-md-4 px-3">
+        <div class="login-box mx-auto">
           <div class="text-center mb-4">
-            <img src="img/Logo-UNY.svg" alt="Logo UNY" height="60">
+            <img src="img/Logo-UNY.svg" alt="Logo UNY" height="60" class="img-fluid">
             <h5 class="font-weight-bold mt-3">Sistem Registrasi UNY</h5>
           </div>
           <p class="text-center">Silahkan pilih jenis login sesuai status anda</p>
           <form action="index.html">
-            <div class="form-group">
+            <div class="form-group mb-3">
               <input type="text" class="form-control" placeholder="Nomor Peserta">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
               <input type="password" class="form-control" placeholder="PIN">
             </div>
-            <button class="btn btn-green btn-block">Login Calon Mahasiswa</button>
+            <button class="btn btn-green btn-block mb-2">Login Calon Mahasiswa</button>
           </form>
           <p class="text-center my-2">Atau</p>
-          <a href="dashboard.html" class="btn btn-blue btn-block">Login SSO Mahasiswa</a>
+          <a href="dashboard.html" class="btn btn-blue btn-block mb-2">Login SSO Mahasiswa</a>
           <a href="https://password.uny.ac.id/reset" class="btn btn-outline-primary btn-block">Lupa Password SSO UNY</a>
+          
+          <!-- Mobile Info Panel (Accordion) -->
+          <div class="d-md-none mt-4">
+            <div class="mobile-info-panel">
+              <div class="accordion" id="infoAccordion">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-header bg-transparent border-0 p-0" id="headingOne">
+                    <button class="btn btn-link btn-block text-left text-white text-decoration-none py-3 px-4" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <h6 class="font-weight-bold mb-0">Petunjuk Login ▼</h6>
+                    </button>
+                  </div>
+                  
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#infoAccordion">
+                    <div class="card-body px-4 pb-4 pt-0">
+                      <ul class="pl-3">
+                        <li class="mb-2"><strong>Calon Mahasiswa:</strong> login dengan Nomor Peserta dan PIN (tanggal lahir format DDMMYYYY)</li>
+                        <li class="mb-3"><strong>Mahasiswa:</strong> login menggunakan akun SSO UNY</li>
+                        <li class="mb-2">Unduh panduan: <a href="https://uny.id/panduanregistrasi" class="text-white">uny.id/panduanregistrasi</a></li>
+                        <li class="mb-2">Form UKT: <a href="https://registrasi.uny.ac.id/ukt" class="text-white">registrasi.uny.ac.id/ukt</a></li>
+                        <li class="mb-2"><strong>PERHATIAN!</strong> Unggah Surat Sehat dan Bebas Napza sebelum pembuatan KTM.</li>
+                        <li>VA pembayaran SPP: <a href="https://unity.uny.ac.id" class="text-white">unity.uny.ac.id</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Right Info Panel -->
-      <div class="col-md-8 d-none d-md-block">
+      <!-- Right Info Panel (Desktop) -->
+      <div class="col-md-8 d-none d-md-block px-0">
         <div class="right-panel h-100 d-flex flex-column justify-content-center">
           <div class="mb-4">
             <h6 class="font-weight-bold">Petunjuk Login</h6>
@@ -105,6 +170,10 @@
       </div>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
