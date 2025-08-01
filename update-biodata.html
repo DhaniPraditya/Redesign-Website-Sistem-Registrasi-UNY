@@ -326,7 +326,7 @@
       </div>
 
       <div class="text-right">
-  <button type="button" class="btn btn-primary" onclick="nextSubStep(2)" disabled>Selanjutnya</button>
+  <button type="button" class="btn btn-primary" onclick="nextSubStep(2)">Selanjutnya</button>
       </div>
     </form>
 
@@ -436,7 +436,7 @@
   </div>
   <div class="d-flex justify-content-between">
     <button type="button" class="btn btn-secondary" onclick="backSubStep(1)">Kembali</button>
-    <button type="button" class="btn btn-primary" onclick="nextSubStep(3)" disabled>Selanjutnya</button>
+    <button type="button" class="btn btn-primary" onclick="nextSubStep(3)">Selanjutnya</button>
   
   </div>
 </form>
@@ -490,7 +490,7 @@
   </div>
   <div class="d-flex justify-content-between">
     <button type="button" class="btn btn-secondary" onclick="backSubStep(2)">Kembali</button>
-  <button type="button" class="btn btn-primary" onclick="nextSubStep(4)" disabled>Selanjutnya</button>
+  <button type="button" class="btn btn-primary" onclick="nextSubStep(4)">Selanjutnya</button>
   </div>
 </form>
 
@@ -519,7 +519,7 @@
   </div>
   <div class="d-flex justify-content-between">
     <button type="button" class="btn btn-secondary" onclick="backSubStep(3)">Kembali</button>
-        <button type="button" class="btn btn-primary" onclick="goToStep2()" disabled>Selanjutnya</button>
+        <button type="button" class="btn btn-primary" onclick="goToStep2()">Selanjutnya</button>
   </div>
 </form>
 
@@ -811,7 +811,7 @@
   </div>
   <div class="d-flex justify-content-between">
     <button type="button" class="btn btn-secondary" onclick="goToStep4Substep(2)">Kembali</button>
-    <button type="button" class="btn btn-success" onclick="showSelesaiModal()" disabled>Simpan</button>
+    <button type="button" class="btn btn-success" onclick="showSelesaiModal()">Simpan</button>
   </div>
 </div>
 </div>
@@ -892,42 +892,7 @@
   }
 </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Function to check if all required inputs/selects in the current visible form are filled
-    function checkRequiredFields() {
-      // Find the currently visible form or step container
-      const visibleForm = document.querySelector('form:not(.d-none), div[style*="display: block"]');
-      if (!visibleForm) return;
 
-      // Find all required inputs and selects inside the visible form
-      const requiredFields = visibleForm.querySelectorAll('input[required], select[required], textarea[required]');
-      let allFilled = true;
-
-      requiredFields.forEach(field => {
-        if (!field.value || field.value.trim() === '') {
-          allFilled = false;
-        }
-      });
-
-      // Find the primary button inside the visible form or container
-      const primaryButton = visibleForm.querySelector('button.btn-primary');
-      if (primaryButton) {
-        primaryButton.disabled = !allFilled;
-      }
-    }
-
-    // Initial check on page load
-    checkRequiredFields();
-
-    // Add event listeners to all required fields to check on input/change
-    const allRequiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
-    allRequiredFields.forEach(field => {
-      field.addEventListener('input', checkRequiredFields);
-      field.addEventListener('change', checkRequiredFields);
-    });
-  });
-</script>
 
 
 
