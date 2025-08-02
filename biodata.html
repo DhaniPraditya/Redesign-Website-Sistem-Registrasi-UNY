@@ -896,6 +896,17 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     
+    <!-- Sidebar Tidak Terbuka Otomatis dalam Tampilan Mobile -->
+    <script>
+      $(document).ready(function () {
+        if ($(window).width() < 768) {
+          // Pastikan sidebar tertutup di mobile saat awal load
+          $("body").addClass("sidebar-toggled");
+          $(".sidebar").addClass("toggled");
+          $(".sidebar .collapse").collapse('hide');
+        }
+      });
+    </script>
 
 </body>
 

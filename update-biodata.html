@@ -1052,7 +1052,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content text-center p-4">
       <div class="modal-body">
-        <h5 class="modal-title mb-3">Registrasi Selesai!</h5>
+        <h5 class="modal-title text-gray-900 mb-3">Registrasi Selesai!</h5>
         <p>Terima kasih, data Anda telah disimpan.</p>
         Silahkan mengunggah dokumen yang tertera pada halaman Dashboard.<br>
         <a href="dashboard.html" type="button" class="btn btn-success mt-2">Kembali ke Dashboard</a>
@@ -1060,6 +1060,17 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    if ($(window).width() < 768) {
+      // Pastikan sidebar tertutup di mobile saat awal load
+      $("body").addClass("sidebar-toggled");
+      $(".sidebar").addClass("toggled");
+      $(".sidebar .collapse").collapse('hide');
+    }
+  });
+</script>
 
 </body>
 
