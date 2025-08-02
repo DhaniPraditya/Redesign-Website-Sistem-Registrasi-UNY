@@ -376,7 +376,7 @@
                 <div class="modal-body">Pilih tombol "Logout" jika anda ingin keluar.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="index.html">Logout</a>
+                    <a class="btn btn-primary" href="index.html" onclick="localStorage.removeItem('dashboard-alert-shown')">Logout</a>
                 </div>
             </div>
         </div>
@@ -434,19 +434,23 @@
 
 <script>
     window.addEventListener('load', function () {
-        // Munculkan dropdown alert
-        const alertDropdown = document.querySelector('#alertsDropdown');
-        const alertMenu = document.querySelector('#alertsDropdown + .dropdown-menu');
+    const alertDropdown = document.querySelector('#alertsDropdown');
+    const alertMenu = document.querySelector('#alertsDropdown + .dropdown-menu');
 
-        if (alertMenu) {
-            alertMenu.classList.add('show');
-            alertDropdown.setAttribute('aria-expanded', 'true');
-        }
+    const alertAlreadyShown = localStorage.getItem('dashboard-alert-shown');
+
+    if (!alertAlreadyShown && alertMenu) {
+        // Tampilkan dropdown hanya sekali
+        alertMenu.classList.add('show');
+        alertDropdown.setAttribute('aria-expanded', 'true');
+
+        // Simpan ke localStorage supaya tidak ditampilkan lagi nanti
+        localStorage.setItem('dashboard-alert-shown', 'true');
 
         // Tampilkan overlay
         document.getElementById('overlay').style.display = 'block';
 
-        // Klik di mana saja untuk menutup alert dan overlay
+        // Tutup alert saat klik di luar
         document.addEventListener('click', function (e) {
             if (!alertMenu.contains(e.target) && !alertDropdown.contains(e.target)) {
                 alertMenu.classList.remove('show');
@@ -454,7 +458,8 @@
                 document.getElementById('overlay').style.display = 'none';
             }
         });
-    });
+    }
+});
 </script>
 
 
