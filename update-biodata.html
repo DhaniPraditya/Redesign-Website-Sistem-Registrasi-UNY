@@ -344,94 +344,15 @@
     </div>
     <div class="form-group col-md-4">
       <label>Provinsi Asal <span class="text-danger">*</span></label>
-      <select class="form-control" required>
-        <option value="">- Pilih -</option>
-        <option>Aceh</option>
-        <option>Sumatera Utara</option>
-        <option>Sumatera Barat</option>
-        <option>Riau</option>
-        <option>Kepulauan Riau</option>
-        <option>Jambi</option>
-        <option>Sumatera Selatan</option>
-        <option>Bangka Belitung</option>
-        <option>Bengkulu</option>
-        <option>Lampung</option>
-        <option>DKI Jakarta</option>
-        <option>Jawa Barat</option>
-        <option>Banten</option>
-        <option>Jawa Tengah</option>
-        <option>DI Yogyakarta</option>
-        <option>Jawa Timur</option>
-        <option>Kalimantan Barat</option>
-        <option>Kalimantan Tengah</option>
-        <option>Kalimantan Selatan</option>
-        <option>Kalimantan Timur</option>
-        <option>Kalimantan Utara</option>
-        <option>Bali</option>
-        <option>Nusa Tenggara Barat</option>
-        <option>Nusa Tenggara Timur</option>
-        <option>Sulawesi Utara</option>
-        <option>Sulawesi Tengah</option>
-        <option>Sulawesi Selatan</option>
-        <option>Sulawesi Tenggara</option>
-        <option>Sulawesi Barat</option>
-        <option>Gorontalo</option>
-        <option>Maluku</option>
-        <option>Maluku Utara</option>
-        <option>Papua</option>
-        <option>Papua Barat</option>
-      </select>
+      <select id="provinsi" class="form-control" required></select>
     </div>
     <div class="form-group col-md-4">
       <label>Kabupaten Asal <span class="text-danger">*</span></label>
-      <select class="form-control" required>
-        <option value="">- Pilih -</option>
-        <option>Kota Yogyakarta</option>
-        <option>Sleman</option>
-        <option>Bantul</option>
-        <option>Kulon Progo</option>
-        <option>Gunungkidul</option>
-      </select>
+      <select id="kabupaten" class="form-control" required></select>
     </div>
     <div class="form-group col-md-4">
       <label>Kecamatan Asal <span class="text-danger">*</span></label>
-      <select class="form-control" required>
-        <option value="">- Pilih -</option>
-        <option>Danurejan</option>
-        <option>Gedongtengen</option>
-        <option>Gondokusuman</option>
-        <option>Gondomanan</option>
-        <option>Jetis</option>
-        <option>Kotagede</option>
-        <option>Kraton</option>
-        <option>Mantrijeron</option>
-        <option>Mergangsan</option>
-        <option>Ngampilan</option>
-        <option>Pakualaman</option>
-        <option>Tegalrejo</option>
-        <option>Umbulharjo</option>
-        <option>Wirobrajan</option>
-        <option>Cangkringan</option>
-        <option>Depok</option>
-        <option>Gamping</option>
-        <option>Godean</option>
-        <option>Grijan</option> <!-- *Catatan: kemungkinan ini maksudnya "Berbah" atau typo dari "Girikerto"? -->
-        <option>Kalasan</option>
-        <option>Minggir</option>
-        <option>Mlati</option>
-        <option>Moyudan</option>
-        <option>Ngaglik</option>
-        <option>Ngemplak</option>
-        <option>Pakem</option>
-        <option>Prambanan</option>
-        <option>Seyegan</option>
-        <option>Sleman</option>
-        <option>Tempel</option>
-        <option>Turi</option>
-        <option>Bambanglipuro</option>
-        <option>Banguntapan</option>
-        <option>Bantul</option>
-      </select>
+      <select id="kecamatan" class="form-control" required></select>
     </div>
   </div>
   <div class="d-flex justify-content-between">
@@ -1080,6 +1001,51 @@
   }
 </script>
 
+
+<script>
+  const provinsiSelect = document.getElementById('provinsi');
+  const kabupatenSelect = document.getElementById('kabupaten');
+  const kecamatanSelect = document.getElementById('kecamatan');
+
+  // Load provinsi
+  fetch('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
+    .then(res => res.json())
+    .then(data => {
+      provinsiSelect.innerHTML = '<option value="">- Pilih Provinsi -</option>';
+      data.forEach(item => {
+        provinsiSelect.innerHTML += `<option value="${item.id}">${item.name}</option>`;
+      });
+    });
+
+  // Ketika provinsi dipilih
+  provinsiSelect.addEventListener('change', () => {
+    const provId = provinsiSelect.value;
+    kabupatenSelect.innerHTML = '<option value="">Memuat...</option>';
+    fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${provId}.json`)
+      .then(res => res.json())
+      .then(data => {
+        kabupatenSelect.innerHTML = '<option value="">- Pilih Kabupaten -</option>';
+        kecamatanSelect.innerHTML = '<option value="">- Pilih Kecamatan -</option>';
+        data.forEach(item => {
+          kabupatenSelect.innerHTML += `<option value="${item.id}">${item.name}</option>`;
+        });
+      });
+  });
+
+  // Ketika kabupaten dipilih
+  kabupatenSelect.addEventListener('change', () => {
+    const kabId = kabupatenSelect.value;
+    kecamatanSelect.innerHTML = '<option value="">Memuat...</option>';
+    fetch(`https://www.emsifa.com/api-wilayah-indonesia/api/districts/${kabId}.json`)
+      .then(res => res.json())
+      .then(data => {
+        kecamatanSelect.innerHTML = '<option value="">- Pilih Kecamatan -</option>';
+        data.forEach(item => {
+          kecamatanSelect.innerHTML += `<option value="${item.id}">${item.name}</option>`;
+        });
+      });
+  });
+</script>
 
 <!-- MODAL REGISTRASI SELESAI -->
 <div class="modal fade" id="modalSelesai" tabindex="-1" role="dialog" aria-labelledby="modalSelesaiLabel" aria-hidden="true">
