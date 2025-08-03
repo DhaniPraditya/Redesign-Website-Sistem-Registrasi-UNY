@@ -24,7 +24,7 @@
   --white: #fff;
   --gray: #858796;
   --gray-dark: #5a5c69;
-  --primary: #f0f0f0;
+  --primary: #fff;
   --secondary: #858796;
   --success: #1cc88a;
   --info: #36b9cc;
@@ -550,12 +550,16 @@ pre code {
 .container-sm,
 .container-md,
 .container-lg,
-.container-xl {
+.container-xl
+ {
   width: 100%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+  background-color: #f0f0f0;
+  height: 100%;
+  padding-top: 20px;
 }
 
 @media (min-width: 576px) {
@@ -6416,6 +6420,8 @@ a.close.disabled {
   background-color: #4e73df !important;
 }
 
+
+
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
@@ -10353,7 +10359,7 @@ a:focus {
 }
 
 .sidebar .nav-item .nav-link.active {
-  background-color: #224abe !important;
+  background-color: #1E3A8A !important;
   color: white !important;
   border-radius: 8px;
 }
