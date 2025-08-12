@@ -1078,6 +1078,58 @@
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    $('#modalPin').modal('show');
+
+    const pinInput = document.getElementById('pinInput');
+    const btnValidasi = document.getElementById('btnValidasi');
+
+    // Hanya angka
+    pinInput.addEventListener('input', function () {
+      this.value = this.value.replace(/\D/g, '');
+      if (this.classList.contains('is-invalid')) {
+        this.classList.remove('is-invalid');
+      }
+    });
+
+    btnValidasi.addEventListener('click', function () {
+      const pinValue = pinInput.value.trim();
+
+      if (!/^\d{6}$/.test(pinValue)) {
+        pinInput.classList.add('is-invalid'); // tampilkan border merah & pesan
+        return;
+      }
+
+      pinInput.classList.remove('is-invalid');
+      $('#modalPin').modal('hide');
+    });
+  });
+</script>
+
+<!-- Modal Validasi PIN -->
+<div class="modal fade" id="modalPin" tabindex="-1" role="dialog" aria-labelledby="modalPinLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content text-center p-4" style="border-radius: 12px;">
+      <div class="modal-body">
+        <div class="mb-3">
+          <i class="bi bi-info-circle-fill text-primary" style="font-size: 2rem;"></i>
+        </div>
+        <h5 class=" font-weight-bold text-gray-900 mb-3">Validasi PIN</h5>
+        <p class="mb-2">Masukkan PIN yang tertera di kuitansi pembayaran KRS.</p>
+        <p class="mb-3">Bagi mahasiswa Bidikmisi dan Kerjasama, PIN telah dikirim ke email <a href="mailto:student@uny.ac.id">student.uny.ac.id</a></p>
+        
+        <input type="text" id="pinInput" class="form-control mb-3" placeholder="PIN KRS">
+        <div class="invalid-feedback mb-3">
+          PIN tidak sesuai!
+        </div>
+
+        <button type="button" id="btnValidasi" class="btn btn-success w-100" style="border-radius: 8px;">Validasi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 </html>
